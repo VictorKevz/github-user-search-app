@@ -18,7 +18,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: fit-content;
+    flex-wrap: wrap;
+    min-height: fit-content;
     padding: 2.4rem 1rem 2.4rem 2.4rem;
     background: linear-gradient(to right, var(--dropdown-header-bg), var(--purple));
     border-radius: 1rem;
@@ -35,19 +36,23 @@
   .repo-details-wrapper{
     display: flex;
     align-items: center;
-    gap: 1.8rem;
+    gap: 1rem;
     width: 100%;
+    flex-wrap: wrap;
   }
   .repo-item{
     display: flex;
     align-items: center;
-    gap: .8rem;
-    font-size: 1.6rem;
+    gap: .3rem;
+    font-size: 1.4rem;
     color: var(--white); 
   }
   .update{
     font-size: 1.2rem;
-    margin-left: 1rem;
+    margin-left: .5rem;
+  }
+  .repo-item.license{
+    text-transform: uppercase;
   }
   .repo-btn{
     color: #96A3B5;

@@ -11,29 +11,35 @@ import Repo from "./components/Repo";
 function App() {
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+
   const [defaultData, setDefaultData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState(query);
   const [isSubmitted, setSubmitted] = useState(false);
-  const[isFetched,setFetched] = useState(false)
+  const [isFetched, setFetched] = useState(false);
+
+ 
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://api.github.com/users/github");
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await response.json();
-        setDefaultData(data);
-        setLoading(false);
-      } catch (error) {
-        setError(error.message);
-        setLoading(false);
-      }
-    };
-    fetchData();
+    
+      // Only fetch default data if no previous data is found
+      const fetchData = async () => {
+        setLoading(true);
+        try {
+          const response = await fetch("https://api.github.com/users/github");
+          if (!response.ok) {
+            throw new Error("Failed to fetch data");
+          }
+          const data = await response.json();
+          setDefaultData(data);
+          setLoading(false)
+        } catch (error) {
+          setError(error.message);
+        } 
+      };
+      fetchData();
+    
   }, []);
 
   useEffect(() => {
@@ -56,12 +62,11 @@ function App() {
         const data = await response.json();
         setSearchResults(data);
         setLoading(false);
-        setFetched(true)
+        setFetched(true);
       } catch (error) {
         setError(error.message);
         setLoading(false);
       }
-     
     };
 
     if (isSubmitted) {

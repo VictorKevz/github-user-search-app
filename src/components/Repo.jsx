@@ -92,7 +92,7 @@ function Repo({ debouncedQuery, isSubmitted, setSubmitted }) {
               <p className="repo-parag">{repo?.description}</p>
               <ul className="repo-details-wrapper">
                 {repo?.license && (
-                  <li className="repo-item">
+                  <li className="repo-item license">
                     <img
                       src={license}
                       alt={`License from ${repo?.license?.name}`}
@@ -115,7 +115,7 @@ function Repo({ debouncedQuery, isSubmitted, setSubmitted }) {
         })}
       </div>
       <button type="button" className="repo-btn" onClick={handleRepos}>
-        {setShowAllRepos ? "Collapse Repositories" : "View all repositories"}
+        {showAllRepos ? "Collapse Repositories" : "View all repositories"}
       </button>
     </section>
   );

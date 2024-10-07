@@ -21,3 +21,24 @@ body {
   background-color: var(--main-input-bg);
   overflow-x: hidden;
 }
+
+/* ..........RESPONSIVENESS............... */
+@media (width <= 900px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tabs-wrapper {
+    align-items: flex-start;
+  }
+  .repos-wrapper {
+    grid-template-columns: 1fr;
+
+  }
+  
+}
+@media (width <= 735px) {
+  .tabs-wrapper {
+    flex-direction: column;
+  } 
+}

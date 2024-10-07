@@ -48,7 +48,9 @@ input:focus{
     outline: none;
 }
 input::placeholder{
-    color: var(--white);
+       color: #96A3B5;
+       font-size: 1.6rem;
+    
 }
 .field:hover{
     border: 2px solid var(--blue);
