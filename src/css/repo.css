@@ -1,0 +1,55 @@
+.repo-container{
+   width: 100%;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   gap: 4.9rem;
+   padding-bottom: 5rem;
+}
+.repos-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.3rem;
+    margin-top: 3.4rem;
+  
+  }
+  .repo-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 2.4rem 1rem 2.4rem 2.4rem;
+    background: linear-gradient(to right, var(--dropdown-header-bg), var(--purple));
+    border-radius: 1rem;
+    gap: 2rem;
+  }
+  .repo-name{
+      color: var(--white);
+      font-size: 2rem;
+  }
+  .repo-parag{
+      font-size: 1.4rem;
+      margin-top: 1.3rem;
+  }
+  .repo-details-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    width: 100%;
+  }
+  .repo-item{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    font-size: 1.6rem;
+    color: var(--white); 
+  }
+  .update{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
+  .repo-btn{
+    color: #96A3B5;
+    font-weight: 500;
+  }
